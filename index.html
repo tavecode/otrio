@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otrio</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-cyan-950 h-screen flex flex-col">
+  <div class="w-full h-20 bg-cyan-950/90 oldbg-[#134253] border-cyan-700 border-b flex justify-center">
+    <div class="py-1 | md:w-[600px] flex h-full items-center text-white text-5xl font-regular">
+      <div class="w-[38px] scale-[46%] mb-[2px] relative grid place-items-center">
+        <svg class="absolute" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+        </svg>
+        <svg class="absolute" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+        </svg>
+      </div>
+      <h1 class="select-none">TRI</h1>
+      <div class="w-[38px] scale-[46%] mb-[2px] relative grid place-items-center">
+        <svg class="absolute" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+        </svg>
+        <svg class="absolute" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full flex flex-col items-center h-full justify-center">
+    <h2 id="turn-display" class="rounded-sm backdrop-blur-lg px-2 bg-cyan-950/40 | text-2xl mt-2 text-teal-400 font-bold">Player 1's Turn</h2>
+
+    <div class="scale-[60%] -mt-20 -mb-20 md:scale-100 lg:scale-100 rounded relative flex flex-col justify-center items-center w-[600px] h-[600px] bg-cyan-950 oldbg-[#134253] border border-cyan-700 md:mt-2 md:mb-0">
+      <span id="howtoplay-btn" class="rounded-sm backdrop-blur-lg px-2 bg-cyan-950/50 | absolute -top-7 usedtobe6 right-0 flex items-center gap-1 text-cyan-100 hover:text-cyan-50 cursor-pointer active:text-cyan-200/60">
+        How to Play
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+          <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+        </svg>
+      </span>
+      <div class="flex items-center">
+        <div class="relative flex flex-col gap-[2px] rounded-l py-3 pl-3 bg-cyan-800">
+          <div class="absolute -top-4 w-[100px] h-4 bg-cyan-800">
+            <div class="w-[100px] h-4 rounded-br bg-cyan-950 oldbg-[#134253]"></div>
+          </div>
+          <div id="p4b1" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+            <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+            <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+          </div>
+          <div id="p4b2" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+            <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+            <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+          </div>
+          <div id="p4b3" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+            <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+            <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+          </div>
+          <div class="absolute -bottom-4 w-[100px] h-4 bg-cyan-800">
+            <div class="w-[100px] h-4 rounded-tr bg-cyan-950 oldbg-[#134253]"></div>
+          </div>
+        </div>
+        <div class="p-3 bg-cyan-800 self-center flex flex-col gap-3 rounded">
+          <div class="flex gap-[2px]">
+            <div id="p1b1" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+              <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+              <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            </div>
+            <div id="p1b2" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+              <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+              <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            </div>
+            <div id="p1b3" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+              <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+              <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            </div>
+          </div>
+          <div id="game-board" class="flex flex-col gap-[2px]">
+            <div class="flex gap-[2px]">
+              <div id="a1" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">A1</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+              <div id="b1" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">B1</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+              <div id="c1" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">C1</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex gap-[2px]">
+              <div id="a2" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">A2</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+              <div id="b2" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">B2</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+              <div id="c2" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">C2</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex gap-[2px]">
+              <div id="a3" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">A3</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+              <div id="b3" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">B3</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+              <div id="c3" class="board-square relative bg-cyan-100 h-[100px] w-[100px] rounded-sm grid place-items-center">
+                <p class="text-sm text-cyan-700/60 font-medium absolute top-1 right-1">C3</p>
+                <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+                <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                  </svg>
+                <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-[2px]">
+            <div id="p3b1" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+              <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+              <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            </div>
+            <div id="p3b2" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+              <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+              <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            </div>
+            <div id="p3b3" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+              <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+              <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+                </svg>
+              <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="relative flex flex-col gap-[2px] rounded-r py-3 pr-3 bg-cyan-800">
+          <div class="absolute -top-4 w-[100px] h-4 bg-cyan-800">
+            <div class="w-[100px] h-4 rounded-bl bg-cyan-950 oldbg-[#134253]"></div>
+          </div>
+          <div id="p2b1" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+            <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+            <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+          </div>
+          <div id="p2b2" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+            <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+            <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+          </div>
+          <div id="p2b3" class="bench-square bg-cyan-200 h-[100px] w-[100px] rounded-sm grid place-items-center">
+            <svg class="groove lg-groove" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3.4375" y="3.4375" width="75.625" height="75.625" rx="37.8125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+            <svg class="groove md-groove" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="ring" cx="27.5" cy="27.5" r="24.0625" stroke="currentColor" stroke-width="6.875"/>
+              </svg>
+            <svg class="groove sm-groove" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.75" cy="13.75" r="10.3125" stroke="currentColor" stroke-width="6.875"/>
+            </svg>
+          </div>
+          <div class="absolute -bottom-4 w-[100px] h-4 bg-cyan-800">
+            <div class="w-[100px] h-4 rounded-tl bg-cyan-950 oldbg-[#134253]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:w-[600px] mt-3 mb-3 flex justify-end">
+      <button id="restart-btn" class="text-base bg-cyan-400 px-3 py-[10px] rounded-md font-medium hover:bg-cyan-300 active:!bg-cyan-700 active:text-white">Restart</button>
+    </div>
+  </div>
+
+  <dialog id="howtoplay-modal" class="backdrop:bg-[#051B24]/50 backdrop:backdrop-blur-sm border border-cyan-900 text-white relative p-8 rounded w-full lg:w-[400px] bg-[#051B24] outline-none">
+    <span id="howtoplay-close-btn" class="absolute top-2 right-2 hover:text-cyan-100 hover:scale-110">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+      </svg>
+    </span>
+    <h1 class="text-2xl">Rules:</h1>
+    <ul class="list-[disc] ml-8 flex flex-col gap-1 mt-2 text-white/90">
+      <li>Play on the same computer, each player picks a colour</li>
+      <li>Pay attention to the turn indicator at the top</li>
+      <li>On your turn select and drop a piece</li>
+      <li>If there are no available moves, you will be prompted to pass the turn</li>
+    </ul>
+    <h2 class="text-xl mt-4 text-cyan-100">How to Win:</h2>
+    <p class="text-cyan-100/90 mt-1 ml-2">
+      Score an "Otrio" – either by stacking three pieces on the same space, putting
+      three pieces of the same size in a line, or by getting
+      three in a row in ascending or descending order.
+    </p>
+  </dialog>
+
+  <dialog id="areyousure-modal" class="backdrop:bg-[#051B24]/50 backdrop:backdrop-blur-sm border border-cyan-900 text-white relative p-8 rounded w-full lg:w-[400px] bg-[#051B24] outline-none">
+    <h1 class="text-center text-2xl">Are you sure?</h1>
+    <div class="flex justify-between mt-8 gap-4">
+      <button id="areyousure-cancel-btn" class="bg-cyan-50 hover:bg-cyan-100 active:bg-cyan-500/60 active:text-white text-black font-medium rounded py-2 px-4 w-1/2 transition-colors duration-75">CANCEL</button>
+      <button id="areyousure-confirm-btn" class="bg-rose-500 hover:bg-rose-400 active:bg-rose-700 active:text-white text-black font-medium rounded py-2 px-4 w-1/2 transition-colors duration-75">CONFIRM</button>
+    </div>
+  </dialog>
+
+  <dialog id="gameover-modal" class="z-50 backdrop:bg-[#051B24]/50 backdrop:backdrop-blur-sm border border-cyan-900 text-white relative p-8 rounded w-full lg:w-[400px] bg-[#051B24] outline-none">
+    <h2 class="text-center font-bold text-2xl">GAME OVER</h2>
+    <h1 id="winner-display" class="text-indigo-400 text-center mt-2 font-medium text-3xl">Placeholder Wins!</h1>
+    <div class="flex flex-col mt-4 gap-3">
+      <button id="viewboard-btn" class="outline-none py-2 rounded text-lg border border-cyan-700 text-cyan-500 hover:text-black hover:bg-cyan-300 active:bg-cyan-700 active:text-white transition-colors duration-75">View Board</button>
+      <button id="newgame-btn" class="outline-none text-lg text-black bg-cyan-400 hover:bg-cyan-300 active:bg-cyan-700 active:text-white rounded font-medium py-2 transition-colors duration-75">NEW GAME</button>
+    </div>
+  </dialog>
+
+  <dialog id="nomoves-modal" class="backdrop:bg-[#051B24]/50 backdrop:backdrop-blur-sm border border-cyan-900 text-white relative p-8 rounded w-full lg:w-[400px] bg-[#051B24] outline-none">
+    <h2 class="text-xl mb-3 text-center">No moves available for <span id="nomoves-playername" class="text-teal-400">Player 1</span></h2>
+    <button id="nomoves-btn" class="w-full outline-none py-2 text-lg text-black bg-cyan-400 hover:bg-cyan-300 active:bg-cyan-700 active:text-white rounded font-medium transition-colors duration-75">Pass Turn to Next Player</button>
+  </dialog>
+</symbol>
+</body>
+<script src="script.js"></script>
+</html>

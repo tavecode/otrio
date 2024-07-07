@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Verdana, sans-serif;
+}
+
+.board-square .groove {
+  @apply absolute text-cyan-700/30 z-10;
+}
+.bench-square .groove {
+  @apply absolute text-cyan-700/40 z-10;
+}
+
+.player-one {
+  @apply text-teal-600
+}
+.player-one.active-turn {
+  @apply hover:text-teal-800;
+}
+.player-one.highlight {
+  @apply !text-teal-950;
+}
+
+.player-two {
+  @apply text-indigo-600;
+}
+.player-two.active-turn {
+  @apply hover:text-indigo-800;
+}
+.player-two.highlight {
+  @apply !text-indigo-950;
+}
+
+.player-three {
+  @apply text-slate-600;
+}
+.player-three.active-turn {
+  @apply hover:text-slate-800;
+}
+.player-three.highlight {
+  @apply !text-slate-950;
+}
+
+.player-four {
+  @apply text-sky-600;
+}
+.player-four.active-turn {
+  @apply hover:text-sky-800;
+}
+.player-four.highlight {
+  @apply !text-sky-950;
+}
+
+.board-square:hover .groove.size-matched {
+  @apply text-cyan-700/55 transition-colors duration-75
+}
+
+.game-over-message {
+  @apply text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-black z-40 backdrop-blur-sm p-3 rounded-lg border-2 border-black
+}
+
+.benched-piece {
+  @apply transition-colors duration-75
+}
+
+
+body {
+  background-image: url(./assets/openart-image_us3FN7xj_1720212888294_raw.png);
+}
